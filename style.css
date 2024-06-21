@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/* color */
+/* #34495e bg nav */
+/* #1abc9c hover nav */
+/* #2c3e50 background porto */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #2c3e50;
+    margin: 0;
+    /* Tambahkan ini untuk menghilangkan margin default body */
+    padding-top: 70px;
+    /* Tambahkan ini untuk memberi ruang di bawah navbar */
+}
+
+
+/* navbar */
+.navbar-container nav {
+    display: flex;
+    gap: 20px;
+    /* Adjust spacing between links */
+}
+
+.navbar-container a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav {
+    position: fixed;
+    /* Ubah dari relative ke fixed untuk membuatnya tetap di atas */
+    top: 20px;
+    /* Berikan jarak dari atas */
+    left: 50%;
+    /* Pusatkan secara horizontal */
+    transform: translateX(-50%);
+    /* Pusatkan secara horizontal */
+    width: 590px;
+    height: 50px;
+    background: #34495e;
+    border-radius: 8px;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
+    z-index: 1000;
+    /* Tambahkan ini untuk memastikan navbar berada di depan konten lainnya */
+}
+
+nav a {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+
+nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    background: #1abc9c;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+}
+
+nav a:nth-child(1) {
+    width: 100px;
+}
+
+nav .start-home,
+a:nth-child(1):hover~.animation {
+    width: 100px;
+    left: 0;
+}
+
+nav a:nth-child(2) {
+    width: 110px;
+}
+
+nav a:nth-child(2):hover~.animation {
+    width: 110px;
+    left: 100px;
+}
+
+nav a:nth-child(3) {
+    width: 100px;
+}
+
+nav a:nth-child(3):hover~.animation {
+    width: 100px;
+    left: 210px;
+}
+
+nav a:nth-child(4) {
+    width: 160px;
+}
+
+nav a:nth-child(4):hover~.animation {
+    width: 160px;
+    left: 310px;
+}
+
+nav a:nth-child(5) {
+    width: 120px;
+}
+
+nav a:nth-child(5):hover~.animation {
+    width: 120px;
+    left: 470px;
+}
+
+/* HeaderText */
+.header-text {
+    margin-top: 6%;
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.header-text h5 {
+    font-size: 60px;
+    margin-top: 25px;
+}
+
+.header-text h5 span {
+    color: #1abc9c;
+}
+
+/* social icons */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 75px;
+    margin-bottom: 150px;
+}
+
+.icon {
+    text-decoration: none;
+    width: 5.625rem;
+    height: 5.625rem;
+    border-radius: 14px;
+    /* background-color: hsla(209 20% 70% / 20%); */
+    /* For dark theme */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.icon>i {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    transition: all 0.2s;
+}
+
+.icon:hover>i {
+    scale: 1.2;
+    color: #f1f1f1;
+}
+
+.icon:before {
+    background: var(--color);
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    left: -110%;
+    top: 80%;
+    transform: rotate(45deg);
+}
+
+.icon:hover:before {
+    animation: slide 0.7s forwards;
+}
+
+@keyframes slide {
+    50% {
+        left: 10%;
+        top: -40%;
+    }
+
+    100% {
+        left: -15%;
+        top: -15%;
+    }
+}
+
+.icon:has(.fa-instagram) {
+    --color: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+.icon:has(.fa-linkedin-in) {
+    --color: #0077b5;
+}
+
+.icon:has(.fa-discord) {
+    --color: #7289DA;
+}
+
+.icon:has(.fa-x-twitter) {
+    --color: #1da1f2;
+}
+
+.icon:has(.fa-github) {
+    --color: #333;
+}
+
+/* about */
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    /* Adjust padding as needed */
+}
+
+.container-about {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    /* Ensure the row takes full width of the container */
+    justify-content: space-between;
+    /* This will place the columns on opposite ends */
+    align-items: center;
+}
+
+.about-col-1,
+.about-col-2 {
+    flex: 1;
+    /* Assign flex 1 to both columns to share the space equally */
+    padding: 20px;
+    /* Optional: Add padding for better spacing inside the columns */
+}
+
+.about-col-1 img {
+    width: 100%;
+    /* Ensuring the image uses the full width of the column */
+    max-width: 400px;
+    /* Keeping your maximum width as is */
+    position: relative;
+    /* Changed from absolute to relative */
+    margin: 0 auto;
+    /* Centering the image within the column */
+    display: block;
+    /* Ensure the image is block level to handle margins correctly */
+    border-radius: 15px;
+    background: #fff;
+    padding: 30px;
+    border-style: solid;
+    border-width: 15px;
+    border-color: lighten(#000, 20%);
+    /* Keeping your color adjustments */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
+}
+
+.about-col-2 {
+    text-align: left;
+    /* Align text to the left for readability */
+}
+
+.sub-title {
+    color: #fff;
+}
+
+.about-card {
+    background-color: #5b6774;
+    /* Dark background for the card */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Padding around the content */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Stronger and darker shadow for depth */
+    max-width: 600px;
+    /* Maximum width of the card */
+    margin: 20px auto;
+    /* Centering the card with auto margins */
+    border-color: #000;
+    /* Border color, can adjust if needed */
+}
+
+
+/* Justified Text within the Card */
+.about-text {
+    color: #fff;
+    /* White text color for contrast */
+    font-size: 16px;
+    /* Font size */
+    text-align: justify;
+    /* Justify the text alignment */
+    text-justify: inter-word;
+    /* Improves spacing between words */
+}
+
+/* project */
+.projects-title {
+    position: absolute;
+    bottom: -92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px;
+    z-index: 1;
+    width: 100%;
+    /* Sesuaikan lebar agar responsif */
+}
+
+
+.container-projects {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* Tambahkan ini untuk memastikan judul di atas slider */
+    align-items: center;
+    /* Tambahkan ini untuk memastikan judul di atas slider */
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 48rem;
+    /* or 100% if you want it to be fully responsive */
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.slider img {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    width: 100%;
+    /* Ensures each image stretches to full container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 25px;
+    /* Consistent rounded corners */
+    border: 3px groove black;
+    /* Ensures a consistent border style and size */
+    box-sizing: border-box;
+    /* Ensures padding and borders are included in the width and height */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for visual effects */
+}
+
+.slider-nav {
+    display: flex;
+    gap: 1rem;
+    /* Creates space between dots */
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.slider-nav a {
+    display: block;
+    /* Ensures the links have a box shape */
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.75;
+    transition: opacity 250ms ease;
+}
+
+.slider-nav a:hover,
+.slider-nav a:focus {
+    opacity: 1;
+    /* Full opacity on hover or focus for better accessibility */
+    outline: none;
+    /* Removes outline for aesthetics; use with caution */
+}
+
+
+/* Skills */
+#skills {
+    display: flex;
+    justify-content: center;
+    /* Menyelaraskan container ke tengah secara horizontal */
+    width: 100%;
+    /* Memastikan elemen ini mengambil lebar penuh */
+}
+
+#skills .container-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Menyelaraskan konten ke kiri */
+    padding: 20px;
+    padding-left: 0;
+    /* Menghilangkan padding kiri */
+    max-width: 960px;
+    /* Sesuaikan jika terlalu lebar atau sempit */
+    margin: 50px auto 0 auto;
+    /* Menambahkan margin atas yang besar */
+    margin-bottom: 100px;
+}
+
+
+
+.skill-text {
+    text-align: left;
+    /* Jika ingin memastikan text rata kiri */
+    padding-left: 10px;
+    /* Menambahkan sedikit padding untuk menyesuaikan alignment */
+    color: white;
+    font-weight: bold;
+}
+
+.skills-description-card {
+    background-color: #5b6774;
+    /* Background color abu-abu gelap */
+    padding: 20px;
+    /* Padding di dalam card */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow:
+        0 6px 10px rgba(0, 0, 0, 0.1),
+        /* Shadow lembut untuk kedalaman */
+        0 1px 18px rgba(0, 0, 0, 0.1),
+        /* Shadow medium untuk menambah blur */
+        0 3px 5px rgba(0, 0, 0, 0.2);
+    /* Shadow lebih gelap pada bagian bawah */
+    margin: 20px 0;
+    /* Margin atas dan bawah untuk pemisahan dari elemen lain */
+    max-width: 960px;
+    /* Lebar maksimum untuk konsistensi dengan container skills */
+}
+
+
+.skills-description {
+    color: white;
+    /* Sesuaikan warna teks dengan tema situs Anda */
+    font-size: 16px;
+    /* Ukuran font yang sesuai untuk pembacaan yang nyaman */
+    margin-bottom: 20px;
+    /* Memberikan jarak antara deskripsi dan baris ikon */
+    line-height: 1.6;
+    /* Line height untuk pembacaan yang lebih baik */
+    padding: 0 10px;
+    /* Padding untuk tidak terlalu menempel di tepi container */
+    text-align: justify;
+}
+
+
+.skills-row {
+    display: flex;
+    justify-content: center;
+    /* Mengubah ini untuk menarik ikon ke tengah */
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+    /* Tambahkan ini untuk menarik row secara horizontal ke tengah */
+    padding: 0;
+    width: auto;
+    /* Sesuaikan ini jika perlu, atau gunakan 100% jika ingin row meregang penuh */
+}
+
+.skill-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-left: 0;
+    /* Menyelaraskan ikon pertama dengan tepi kiri */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-icon img {
+    max-width: 70%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skills-row:hover .skill-icon {
+    opacity: 0.4;
+    /* All icons become semi-transparent when any icon is hovered */
+}
+
+.skill-icon:hover img {
+    transform: scale(1.1);
+    /* Membesar gambar saat di-hover */
+}
+
+.skills-row .skill-icon:hover {
+    opacity: 1;
+    /* The icon being hovered remains fully opaque */
+    transform: scale(1.1);
+    /* Scales the hovered icon */
+}
+
+/* contact */
+/* contact */
+.contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 16px;
+    gap: 20px;
+}
+
+.contact-left-title h2 {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500px;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #1abc9c;
+}
+
+.contact-inputs::placeholder {
+    color: #000;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: groove black;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #2f6bab, #34495e);
+    cursor: pointer;
+}
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 16px;
+    gap: 20px;
+}
+
+.text-card {
+    background-color: #5b6774;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1), 0 1px 18px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: justify;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #3e8e41;
+}
+
+.btn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btn2 {
+    background-color: #008CBA;
+}
+
+.btn2:hover {
+    background-color: #007bb5;
+}
+
+
+
+/* handphone */
+@media (max-width: 800px) {
+    nav {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+        top: 0;
+        height: auto;
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav .animation {
+        display: none;
+    }
+
+    .header-text h5 {
+        font-size: 24px;
+    }
+
+    .contact-inputs {
+        width: 80vw;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        /* Adjust margin as needed */
+        margin-bottom: 100px;
+        /* Adjust margin as needed */
+    }
+
+    .icon {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 20px;
+    }
+
+    .icon>i {
+        font-size: 1.2rem;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        /* Adjust margin as needed */
+    }
+
+    .contact-inputs {
+        width: 80vw;
+        max-width: 300px;
+        /* Limit maximum width of inputs */
+    }
+
+    .text-card {
+        max-width: 100%;
+        /* Ensure card takes full width on smaller screens */
+    }
+
+    .btn,
+    .btn2 {
+        width: 80%;
+        /* Adjust button width for smaller screens */
+        margin-top: 10px;
+        /* Add margin between buttons */
+    }
+}

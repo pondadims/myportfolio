@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfonda's World</title>
+    <!-- Link ke file CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar-container">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <div class="animation start-home"></div>
+        </nav>
+    </div>
+
+    <!-- Header -->
+    <div class="header-container">
+        <div class="header-text">
+            <h5>Hi, I'm <span>Alfonda</span><br>Junior Fullstack Developer</h5>
+        </div>
+    </div>
+
+    <!-- social icons -->
+    <div class="wrapper">
+        <a href="https://www.instagram.com/alfondadim" class="icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://discordapp.com/users/713002697116090421" class="icon"><i class="fa-brands fa-discord"></i></a>
+        <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://github.com/pondadims" class="icon"><i class="fa-brands fa-github"></i></a>
+    </div>
+
+    <!-- about -->
+    <div id="about">
+        <div class="container-about">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="asset/myself.jpg">
+                </div>
+                <div class="about-col-2">
+                    <div class="about-card">
+                        <h1 class="sub-title">ABOUT ME</h1>
+                        <p class="about-text">Hello, my name is Alfonda Dimas Cahaya. I am a Junior Fullstack Developer
+                            student at the Faculty of Engineering, University of Indonesia. My academic and practical
+                            experiences have honed my skills in programming, prototyping, electrical circuit design, and
+                            information security. Additionally, I possess a strong competency in web development,
+                            software
+                            engineering, database management, and data analysis. These skills equip me to tackle complex
+                            challenges in the tech industry effectively.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="projects">
+        <section class="container-projects">
+            <h1 class="projects-title">My Projects</h1>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <img id="slide-1" src="asset/nodered.jpg" alt="Node-RED Project" />
+                    <img id="slide-2" src="asset/iot-gates.jpg" alt="IOT Gates Project" />
+                    <img id="slide-3" src="asset/buzzer.jpg" alt="Buzzer Project" />
+                </div>
+                <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- skills -->
+    <div id="skills">
+        <div class="container-skills">
+            <h2 class="skill-text">My Skills</h2>
+            <div class="skills-description-card">
+                <p class="skills-description">
+                    I have developed a range of technical skills in web development, including proficiency in HTML, CSS,
+                    and JavaScript. I have experience with frontend frameworks like React and backend development using
+                    Node.js. My capabilities extend to building responsive and accessible websites that provide
+                    excellent user experiences. Additionally, I am proficient in embedded systems using Arduino IDE and
+                    have considerable experience with IoT platforms, including Node-RED, which enable me to develop and
+                    manage integrated smart devices and applications.
+                </p>
+            </div>
+            <div class="skills-row">
+                <div class="skill-icon"><img src="asset/icons/html.png" alt="Skill 1"></div>
+                <div class="skill-icon"><img src="asset/icons/css-3.png" alt="Skill 2"></div>
+                <div class="skill-icon"><img src="asset/icons/java-script.png" alt="Skill 3"></div>
+                <div class="skill-icon"><img src="asset/icons/atom.png" alt="Skill 4"></div>
+                <div class="skill-icon"><img src="asset/icons/java.png" alt="Skill 5"></div>
+                <div class="skill-icon"><img src="asset/icons/minus.png" alt="Skill 6"></div>
+                <div class="skill-icon"><img src="asset/icons/node-red.png" alt="Skill 7"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact -->
+    <div id="contact">
+        <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                <div class="contact-left-title">
+                    <h2>Get in touch</h2>
+                    <hr>
+                </div>
+                <input type="hidden" name="access_key" value="18cd79f7-467d-4612-835a-edb5d1a5e297">
+                <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+                <button type="submit">Submit <img src="" alt=""></button>
+            </form>
+            <div class="contact-right">
+                <div class="text-card">
+                    <p>On these button you could download all my certificates achievement. If you interested in me feel
+                        free to contact me through these form.</p>
+                </div>
+                <a href="asset/Sertifikat (1).pdf" download="Sertifikat.pdf" class="btn btn2">My Certificate</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Alfonda.</p>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <!-- Link ke file JavaScript Bootstrap dan dependensi Popper.js -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
