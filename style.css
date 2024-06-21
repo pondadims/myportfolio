@@ -312,7 +312,6 @@ nav a:nth-child(5):hover~.animation {
     /* Improves spacing between words */
 }
 
-/* project */
 .projects-title {
     position: absolute;
     bottom: -92%;
@@ -325,9 +324,9 @@ nav a:nth-child(5):hover~.animation {
     padding: 20px;
     z-index: 1;
     width: 100%;
+    bottom: auto;
     /* Sesuaikan lebar agar responsif */
 }
-
 
 .container-projects {
     padding: 2rem;
@@ -342,7 +341,8 @@ nav a:nth-child(5):hover~.animation {
     position: relative;
     max-width: 48rem;
     /* or 100% if you want it to be fully responsive */
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
+    /* Adjusted margin to move slider down */
 }
 
 .slider {
@@ -410,6 +410,7 @@ nav a:nth-child(5):hover~.animation {
     outline: none;
     /* Removes outline for aesthetics; use with caution */
 }
+
 
 
 /* Skills */
