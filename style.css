@@ -14,9 +14,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #2c3e50;
     margin: 0;
-    /* Tambahkan ini untuk menghilangkan margin default body */
     padding-top: 70px;
-    /* Tambahkan ini untuk memberi ruang di bawah navbar */
+    padding: 5px;
 }
 
 
@@ -24,32 +23,40 @@ body {
 .navbar-container nav {
     display: flex;
     gap: 20px;
-    /* Adjust spacing between links */
+    margin-bottom: 5px;
 }
 
 .navbar-container a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    display: flex;
+}
+
+.navbar-container {
+    position: fixed;
+    z-index: 9999;
+    top: 20px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 nav {
-    position: fixed;
-    /* Ubah dari relative ke fixed untuk membuatnya tetap di atas */
-    top: 20px;
-    /* Berikan jarak dari atas */
-    left: 50%;
-    /* Pusatkan secara horizontal */
-    transform: translateX(-50%);
-    /* Pusatkan secara horizontal */
-    width: 590px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    position: relative;
     height: 50px;
     background: #34495e;
     border-radius: 8px;
     font-size: 0;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
     z-index: 1000;
-    /* Tambahkan ini untuk memastikan navbar berada di depan konten lainnya */
 }
 
 nav a {
@@ -74,55 +81,42 @@ nav .animation {
     transition: all .5s ease 0s;
 }
 
-nav a:nth-child(1) {
-    width: 100px;
+.navbar-container nav a {
+    padding: 0 5px;
 }
 
 nav .start-home,
 a:nth-child(1):hover~.animation {
-    width: 100px;
+    position: absolute;
+    width: 70px;
     left: 0;
-}
+    top: 0;
 
-nav a:nth-child(2) {
-    width: 110px;
 }
 
 nav a:nth-child(2):hover~.animation {
-    width: 110px;
-    left: 100px;
-}
-
-nav a:nth-child(3) {
-    width: 100px;
+    width: 95px;
+    left: 70px;
 }
 
 nav a:nth-child(3):hover~.animation {
     width: 100px;
-    left: 210px;
-}
-
-nav a:nth-child(4) {
-    width: 160px;
+    left: 155px;
 }
 
 nav a:nth-child(4):hover~.animation {
-    width: 160px;
-    left: 310px;
-}
-
-nav a:nth-child(5) {
-    width: 120px;
+    width: 75px;
+    left: 265px;
 }
 
 nav a:nth-child(5):hover~.animation {
-    width: 120px;
-    left: 470px;
+    width: 100px;
+    left: 340px;
 }
 
 /* HeaderText */
 .header-text {
-    margin-top: 6%;
+    margin-top: 10%;
     font-size: 30px;
     text-align: center;
     color: #ffffff;
@@ -152,8 +146,6 @@ nav a:nth-child(5):hover~.animation {
     width: 5.625rem;
     height: 5.625rem;
     border-radius: 14px;
-    /* background-color: hsla(209 20% 70% / 20%); */
-    /* For dark theme */
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -227,8 +219,8 @@ nav a:nth-child(5):hover~.animation {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 20px;
-    /* Adjust padding as needed */
+    padding: 65px 5px;
+    margin-bottom: 15px;
 }
 
 .container-about {
@@ -238,44 +230,33 @@ nav a:nth-child(5):hover~.animation {
 .row {
     display: flex;
     width: 100%;
-    /* Ensure the row takes full width of the container */
     justify-content: space-between;
-    /* This will place the columns on opposite ends */
     align-items: center;
 }
 
 .about-col-1,
 .about-col-2 {
     flex: 1;
-    /* Assign flex 1 to both columns to share the space equally */
     padding: 20px;
-    /* Optional: Add padding for better spacing inside the columns */
 }
 
 .about-col-1 img {
     width: 100%;
-    /* Ensuring the image uses the full width of the column */
     max-width: 400px;
-    /* Keeping your maximum width as is */
     position: relative;
-    /* Changed from absolute to relative */
     margin: 0 auto;
-    /* Centering the image within the column */
     display: block;
-    /* Ensure the image is block level to handle margins correctly */
     border-radius: 15px;
     background: #fff;
     padding: 30px;
     border-style: solid;
     border-width: 15px;
     border-color: lighten(#000, 20%);
-    /* Keeping your color adjustments */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
 }
 
 .about-col-2 {
     text-align: left;
-    /* Align text to the left for readability */
 }
 
 .sub-title {
@@ -284,32 +265,19 @@ nav a:nth-child(5):hover~.animation {
 
 .about-card {
     background-color: #5b6774;
-    /* Dark background for the card */
     border-radius: 8px;
-    /* Rounded corners */
     padding: 20px;
-    /* Padding around the content */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    /* Stronger and darker shadow for depth */
     max-width: 600px;
-    /* Maximum width of the card */
     margin: 20px auto;
-    /* Centering the card with auto margins */
     border-color: #000;
-    /* Border color, can adjust if needed */
 }
 
-
-/* Justified Text within the Card */
 .about-text {
     color: #fff;
-    /* White text color for contrast */
     font-size: 16px;
-    /* Font size */
     text-align: justify;
-    /* Justify the text alignment */
     text-justify: inter-word;
-    /* Improves spacing between words */
 }
 
 .projects-title {
@@ -325,24 +293,19 @@ nav a:nth-child(5):hover~.animation {
     z-index: 1;
     width: 100%;
     bottom: auto;
-    /* Sesuaikan lebar agar responsif */
 }
 
 .container-projects {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    /* Tambahkan ini untuk memastikan judul di atas slider */
     align-items: center;
-    /* Tambahkan ini untuk memastikan judul di atas slider */
 }
 
 .slider-wrapper {
     position: relative;
     max-width: 48rem;
-    /* or 100% if you want it to be fully responsive */
     margin: 2rem auto 0 auto;
-    /* Adjusted margin to move slider down */
 }
 
 .slider {
@@ -353,9 +316,7 @@ nav a:nth-child(5):hover~.animation {
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
     -ms-overflow-style: none;
-    /* Internet Explorer 10+ */
     scrollbar-width: none;
-    /* Firefox */
 }
 
 .slider::-webkit-scrollbar {
@@ -368,23 +329,16 @@ nav a:nth-child(5):hover~.animation {
     scroll-snap-align: start;
     object-fit: cover;
     width: 100%;
-    /* Ensures each image stretches to full container width */
     height: auto;
-    /* Maintain aspect ratio */
     border-radius: 25px;
-    /* Consistent rounded corners */
     border: 3px groove black;
-    /* Ensures a consistent border style and size */
     box-sizing: border-box;
-    /* Ensures padding and borders are included in the width and height */
     transition: all 0.3s ease-in-out;
-    /* Smooth transition for visual effects */
 }
 
 .slider-nav {
     display: flex;
     gap: 1rem;
-    /* Creates space between dots */
     position: absolute;
     bottom: 1.25rem;
     left: 50%;
@@ -394,7 +348,6 @@ nav a:nth-child(5):hover~.animation {
 
 .slider-nav a {
     display: block;
-    /* Ensures the links have a box shape */
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
@@ -406,9 +359,7 @@ nav a:nth-child(5):hover~.animation {
 .slider-nav a:hover,
 .slider-nav a:focus {
     opacity: 1;
-    /* Full opacity on hover or focus for better accessibility */
     outline: none;
-    /* Removes outline for aesthetics; use with caution */
 }
 
 
@@ -417,69 +368,48 @@ nav a:nth-child(5):hover~.animation {
 #skills {
     display: flex;
     justify-content: center;
-    /* Menyelaraskan container ke tengah secara horizontal */
     width: 100%;
-    /* Memastikan elemen ini mengambil lebar penuh */
 }
 
 #skills .container-skills {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Menyelaraskan konten ke kiri */
     padding: 20px;
     padding-left: 0;
-    /* Menghilangkan padding kiri */
     max-width: 960px;
-    /* Sesuaikan jika terlalu lebar atau sempit */
     margin: 50px auto 0 auto;
-    /* Menambahkan margin atas yang besar */
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
 
 
 .skill-text {
     text-align: left;
-    /* Jika ingin memastikan text rata kiri */
     padding-left: 10px;
-    /* Menambahkan sedikit padding untuk menyesuaikan alignment */
     color: white;
     font-weight: bold;
 }
 
 .skills-description-card {
     background-color: #5b6774;
-    /* Background color abu-abu gelap */
     padding: 20px;
-    /* Padding di dalam card */
     border-radius: 10px;
-    /* Rounded corners */
     box-shadow:
         0 6px 10px rgba(0, 0, 0, 0.1),
-        /* Shadow lembut untuk kedalaman */
         0 1px 18px rgba(0, 0, 0, 0.1),
-        /* Shadow medium untuk menambah blur */
         0 3px 5px rgba(0, 0, 0, 0.2);
-    /* Shadow lebih gelap pada bagian bawah */
     margin: 20px 0;
-    /* Margin atas dan bawah untuk pemisahan dari elemen lain */
     max-width: 960px;
-    /* Lebar maksimum untuk konsistensi dengan container skills */
 }
 
 
 .skills-description {
     color: white;
-    /* Sesuaikan warna teks dengan tema situs Anda */
     font-size: 16px;
-    /* Ukuran font yang sesuai untuk pembacaan yang nyaman */
     margin-bottom: 20px;
-    /* Memberikan jarak antara deskripsi dan baris ikon */
     line-height: 1.6;
-    /* Line height untuk pembacaan yang lebih baik */
     padding: 0 10px;
-    /* Padding untuk tidak terlalu menempel di tepi container */
     text-align: justify;
 }
 
@@ -487,14 +417,11 @@ nav a:nth-child(5):hover~.animation {
 .skills-row {
     display: flex;
     justify-content: center;
-    /* Mengubah ini untuk menarik ikon ke tengah */
     flex-wrap: wrap;
     gap: 10px;
     margin: 0 auto;
-    /* Tambahkan ini untuk menarik row secara horizontal ke tengah */
     padding: 0;
     width: auto;
-    /* Sesuaikan ini jika perlu, atau gunakan 100% jika ingin row meregang penuh */
 }
 
 .skill-icon {
@@ -505,7 +432,6 @@ nav a:nth-child(5):hover~.animation {
     align-items: center;
     margin: 10px;
     margin-left: 0;
-    /* Menyelaraskan ikon pertama dengan tepi kiri */
     border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -522,22 +448,17 @@ nav a:nth-child(5):hover~.animation {
 
 .skills-row:hover .skill-icon {
     opacity: 0.4;
-    /* All icons become semi-transparent when any icon is hovered */
 }
 
 .skill-icon:hover img {
     transform: scale(1.1);
-    /* Membesar gambar saat di-hover */
 }
 
 .skills-row .skill-icon:hover {
     opacity: 1;
-    /* The icon being hovered remains fully opaque */
     transform: scale(1.1);
-    /* Scales the hovered icon */
 }
 
-/* contact */
 /* contact */
 .contact-container {
     height: 100vh;
@@ -661,80 +582,155 @@ nav a:nth-child(5):hover~.animation {
     background-color: #007bb5;
 }
 
+.copyright {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    color: white;
+    background-color: #000;
+}
 
+.copyright p {
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
 
-/* handphone */
-@media (max-width: 800px) {
-    nav {
+/* Responsive Layout */
+@media only screen and (max-width: 800px) {
+    body {
         width: 100%;
-        left: 0;
-        transform: translateX(0);
+    }
+
+    /* navbar */
+    .navbar-container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    .navbar-container nav a {
+        font-size: 0.8rem;
+    }
+
+    .navbar-container nav {
+        position: relative;
+        transform: scale(0.8) !important;
         top: 0;
-        height: auto;
-        flex-direction: column;
+        left: 0;
     }
 
-    nav a {
-        font-size: 14px;
-        padding: 10px;
-        text-align: center;
-        width: 100%;
+    nav .start-home,
+    a:nth-child(1):hover~.animation {
+        position: absolute;
+        width: 70px;
+        left: 0;
+        top: 0;
+
     }
 
-    nav .animation {
-        display: none;
+    nav a:nth-child(2):hover~.animation {
+        width: 65px;
+        left: 70px;
+    }
+
+    nav a:nth-child(3):hover~.animation {
+        width: 85px;
+        left: 140px;
+    }
+
+    nav a:nth-child(4):hover~.animation {
+        width: 70px;
+        left: 230px;
+    }
+
+    nav a:nth-child(5):hover~.animation {
+        width: 100px;
+        left: 290px;
+    }
+
+    /* header */
+    .header-container {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        margin-top: 35px;
     }
 
     .header-text h5 {
-        font-size: 24px;
+        font-size: 25px;
+        font-weight: 100;
     }
 
-    .contact-inputs {
-        width: 80vw;
-    }
-
+    /* socials */
     .wrapper {
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: auto;
+        height: max-content;
+        flex-wrap: wrap;
+        margin-bottom: 0%;
+    }
+
+    .wrapper a {
+        width: 75px;
+        height: 75px;
+    }
+
+    /* about */
+    .about-col-1 {
+        display: none;
+    }
+
+    .about-col-2 {
+        display: flex;
+        justify-content: center;
+        position: relative;
         align-items: center;
-        margin-top: 50px;
-        /* Adjust margin as needed */
-        margin-bottom: 100px;
-        /* Adjust margin as needed */
+        margin-left: 13px;
+        margin-right: 1px;
     }
 
-    .icon {
-        width: 4rem;
-        height: 4rem;
-        margin-bottom: 20px;
+    /* skills */
+    #skills {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        margin-left: 14px;
+        /* margin-right: px; */
     }
 
-    .icon>i {
-        font-size: 1.2rem;
-    }
-
+    /* contact */
     .contact-container {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+    }
+
+    .contact-left input,
+    .contact-left textarea {
+        width: 100%;
+    }
+
+    .contact-right {
+        display: flex;
+        position: relative;
         align-items: center;
-        margin-top: 50px;
-        /* Adjust margin as needed */
+        justify-content: center;
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-top: 5%;
     }
 
-    .contact-inputs {
-        width: 80vw;
-        max-width: 300px;
-        /* Limit maximum width of inputs */
-    }
 
-    .text-card {
-        max-width: 100%;
-        /* Ensure card takes full width on smaller screens */
-    }
-
-    .btn,
-    .btn2 {
-        width: 80%;
-        /* Adjust button width for smaller screens */
-        margin-top: 10px;
-        /* Add margin between buttons */
-    }
 }
